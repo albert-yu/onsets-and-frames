@@ -15,7 +15,7 @@ from onsets_and_frames import *
 def config():
     logdir = "runs/transcriber-" + datetime.now().strftime("%y%m%d-%H%M%S")
     # device = "mps" if torch.mps. else "cpu"
-    device = "cpu"
+    device = "mps"
     iterations = 500000
     resume_iteration = None
     checkpoint_interval = 1000
