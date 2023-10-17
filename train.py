@@ -14,13 +14,12 @@ from onsets_and_frames import *
 
 def config():
     logdir = "runs/transcriber-" + datetime.now().strftime("%y%m%d-%H%M%S")
-    # device = "mps" if torch.mps. else "cpu"
-    device = "mps"
-    iterations = 500000
+    device = DEFAULT_DEVICE
+    iterations = 10000
     resume_iteration = None
     checkpoint_interval = 1000
-    # train_on = "MAESTRO"
-    train_on = "MAPS"
+    train_on = "MAESTRO"
+    # train_on = "MAPS"
 
     batch_size = 8
     sequence_length = 327680
@@ -46,7 +45,7 @@ def config():
     clip_gradient_norm = 3
 
     validation_length = sequence_length
-    validation_interval = 500
+    validation_interval = 100
     return {
         "logdir": logdir,
         "device": device,
